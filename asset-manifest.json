@@ -1,0 +1,23 @@
+{
+  "files": {
+    "main.css": "/STONY_STORE_FE/static/css/main.228c1164.css",
+    "main.js": "/STONY_STORE_FE/static/js/main.8cc2234f.js",
+    "static/js/787.28cb0dcd.chunk.js": "/STONY_STORE_FE/static/js/787.28cb0dcd.chunk.js",
+    "static/media/fa-solid-900.ttf": "/STONY_STORE_FE/static/media/fa-solid-900.d75e3fd1eb12e9bd6655.ttf",
+    "static/media/fa-brands-400.ttf": "/STONY_STORE_FE/static/media/fa-brands-400.016b4a6cdced82ab3aa1.ttf",
+    "static/media/fa-solid-900.woff2": "/STONY_STORE_FE/static/media/fa-solid-900.b6879d41b0852f01ed5b.woff2",
+    "static/media/fa-brands-400.woff2": "/STONY_STORE_FE/static/media/fa-brands-400.878f31251d960bd6266f.woff2",
+    "static/media/fa-regular-400.ttf": "/STONY_STORE_FE/static/media/fa-regular-400.50701fbb8177c2dde530.ttf",
+    "static/media/fa-regular-400.woff2": "/STONY_STORE_FE/static/media/fa-regular-400.b041b1fa4fe241b23445.woff2",
+    "static/media/fa-v4compatibility.ttf": "/STONY_STORE_FE/static/media/fa-v4compatibility.c6a0c95b0a95c4553700.ttf",
+    "static/media/fa-v4compatibility.woff2": "/STONY_STORE_FE/static/media/fa-v4compatibility.1bac2991f3dbfa237aec.woff2",
+    "index.html": "/STONY_STORE_FE/index.html",
+    "main.228c1164.css.map": "/STONY_STORE_FE/static/css/main.228c1164.css.map",
+    "main.8cc2234f.js.map": "/STONY_STORE_FE/static/js/main.8cc2234f.js.map",
+    "787.28cb0dcd.chunk.js.map": "/STONY_STORE_FE/static/js/787.28cb0dcd.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.228c1164.css",
+    "static/js/main.8cc2234f.js"
+  ]
+}
