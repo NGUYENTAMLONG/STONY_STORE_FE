@@ -1,0 +1,27 @@
+.header-right {
+  .container-nav {
+    .nav-item {
+      transition: all ease-in-out 0.2s;
+    }
+    .nav-item:hover {
+      scale: 1.2;
+    }
+  }
+}
+.header-right-responsive {
+  display: none;
+  height: 100%;
+  width: 100%;
+  align-items: center; // Center align vertically
+  justify-content: flex-end;
+}
+
+/* Mobile styles */
+@media screen and (max-width: 768px) {
+  .header-right {
+    display: none !important;
+  }
+  .header-right-responsive {
+    display: flex;
+  }
+}

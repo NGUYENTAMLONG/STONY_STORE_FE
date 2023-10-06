@@ -1,0 +1,198 @@
+.footer {
+  background-color: var(--color-8);
+  margin-top: 100px;
+  padding: 100px 0px;
+  .container {
+    width: 100%;
+  }
+  &__about {
+    &__title {
+      margin-bottom: 50px;
+      font-weight: bold;
+      &__icon {
+        margin-right: 10px;
+        font-size: 20px;
+        color: var(--color-10);
+      }
+      &__text {
+        line-height: 100%;
+        color: var(--color-10);
+      }
+    }
+    &__location {
+      max-width: 200px;
+      &__icon {
+        margin-right: 10px;
+        font-size: 20px;
+        color: var(--color-10);
+      }
+      &__text {
+        line-height: 100%;
+        color: var(--color-10);
+      }
+    }
+    &__phone {
+      &__icon {
+        margin-right: 10px;
+        font-size: 20px;
+        color: var(--color-10);
+      }
+      &__text {
+        line-height: 100%;
+        color: var(--color-10);
+      }
+    }
+    &__mail {
+      &__icon {
+        margin-right: 10px;
+        font-size: 20px;
+        color: var(--color-10);
+      }
+      &__text {
+        line-height: 100%;
+        color: var(--color-10);
+      }
+    }
+    &__form {
+      max-width: 100%;
+      &__container {
+        position: relative;
+      }
+      &__input {
+        max-width: 100%;
+        padding: 10px 30px 10px 10px !important;
+      }
+      &__submit {
+        position: absolute;
+        right: 10px;
+        bottom: 0px;
+        top: 0px;
+        outline: none;
+        border: none;
+        background-color: transparent;
+        transition: ease-in-out 0.5s all;
+        &:hover {
+          transform: scale(1.5);
+        }
+      }
+    }
+  }
+  &__support {
+    &__title {
+      margin-bottom: 50px;
+      font-weight: bold;
+      &__icon {
+        margin-right: 10px;
+        font-size: 20px;
+        color: var(--color-10);
+      }
+      &__text {
+        line-height: 100%;
+        color: var(--color-10);
+      }
+    }
+    &__hotline {
+      &__text {
+        line-height: 100%;
+        color: var(--color-10);
+      }
+    }
+    &__collaborator {
+      &__text {
+        line-height: 100%;
+        color: var(--color-10);
+      }
+    }
+    &__recruitment {
+      &__text {
+        line-height: 100%;
+        color: var(--color-10);
+      }
+    }
+  }
+  &__infor {
+    &__title {
+      margin-bottom: 50px;
+      font-weight: bold;
+      &__icon {
+        margin-right: 10px;
+        font-size: 20px;
+        color: var(--color-10);
+      }
+      &__text {
+        line-height: 100%;
+        color: var(--color-10);
+      }
+    }
+    &__homepage {
+      &__text {
+        line-height: 100%;
+        color: var(--color-10);
+      }
+    }
+    &__about {
+      &__text {
+        line-height: 100%;
+        color: var(--color-10);
+      }
+    }
+    &__news {
+      &__text {
+        line-height: 100%;
+        color: var(--color-10);
+      }
+    }
+    &__item {
+      &__text {
+        line-height: 100%;
+        color: var(--color-10);
+      }
+    }
+  }
+  &__follow {
+    &__title {
+      margin-bottom: 50px;
+      font-weight: bold;
+      &__icon {
+        margin-right: 10px;
+        font-size: 20px;
+        color: var(--color-10);
+      }
+      &__text {
+        line-height: 100%;
+        color: var(--color-10);
+      }
+    }
+    &__facebook {
+      &__icon {
+        font-size: 40px;
+        margin-right: 20px;
+        color: var(--color-10);
+      }
+    }
+    &__instagram {
+      &__icon {
+        font-size: 40px;
+        margin-right: 20px;
+        color: var(--color-10);
+      }
+    }
+    &__twitter {
+      &__icon {
+        font-size: 40px;
+        margin-right: 20px;
+        color: var(--color-10);
+      }
+    }
+    &__youtube {
+      &__icon {
+        font-size: 40px;
+        margin-right: 20px;
+        color: var(--color-10);
+      }
+    }
+  }
+  &__map {
+    width: 100%;
+  }
+}

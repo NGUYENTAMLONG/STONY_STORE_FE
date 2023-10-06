@@ -1,0 +1,110 @@
+@import url("https://fonts.googleapis.com/css2?family=Aleo:wght@200;300;400;500;600;700&family=Rokkitt:ital,wght@0,100;0,200;0,400;0,500;0,600;1,100&family=Space+Mono&display=swap");
+
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  // font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+  //   "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+  //   sans-serif;
+  font-family: "Aleo", serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: "Rokkitt", serif;
+}
+
+:root {
+  body {
+    font-family: "Space Mono", monospace;
+  }
+
+  --color-1: #ffcc70;
+  --color-2: #22668d;
+  --color-3: #fffadd;
+  --color-4: #8ecddd;
+  --color-5: #1f5f5f;
+  --color-6: #707070;
+  --color-7: #f0f0f0;
+  --color-8: #001524;
+  --color-9: #000000;
+  --color-10: #ffffff;
+  /*
+    - Color-1: Primary (CTA)
+    - Color-2: Tiêu đề
+    - Color-3: Mô tả
+    - Color-4: Nền 1
+    - Color-5: Nền 2
+    - Color-6: Nền 3
+    - Color-7: Yếu tố phụ (Đường line, bullet symbol, icon)
+    - Color-8: Tương tác (Hover, Clicked, Drag, Tap, Focus, Pressed...)
+    - Color-9: black
+    - Color-10: white
+    - Color-11: info
+    - Color-12: error
+    - Color-13: success
+    - Color-14: warning
+    Màu sắc (Sử dụng tối đa 14 màu, từ màu 10 - 14: Không thay đổi; các màu còn lại có thể áp dụng với các thành phần khác nhau theo phong cách thiết kế)
+    */
+  // Font-size Từ lớn đến bé, fs1 là lớn nhất
+  // Font-size được quy ước theo Bootstrap 1rem ~ 16px
+  --fs-1: 2.5rem;
+  --fs-2: 2rem;
+  --fs-3: 1.75rem;
+  --fs-4: 1.5rem;
+  --fs-5: 1.25rem;
+  --fs-6: 1rem;
+  --fs-7: 0.875rem;
+  --fs-8: 0.75rem;
+  --fs-9: 0.625rem;
+
+  --rounded-1: 1px;
+  --rounded-2: 2px;
+  --rounded-3: 3px;
+  --rounded-4: 4px;
+  --rounded-5: 5px;
+  --rounded-6: 6px;
+  --rounded-7: 7px;
+  --rounded-8: 8px;
+  --rounded-9: 9px;
+  --rounded-10: 10px;
+
+  --fw-1: 300;
+  --fw-2: 400;
+  --fw-3: 500;
+  --fw-4: 600;
+  --fw-5: 700;
+  --fw-6: 800;
+}
+
+.fs {
+  &-1 {
+    font-size: var(--fs-1);
+  }
+  &-2 {
+    font-size: var(--fs-2);
+  }
+  &-3 {
+    font-size: var(--fs-3);
+  }
+  &-4 {
+    font-size: var(--fs-4);
+  }
+  &-5 {
+    font-size: var(--fs-5);
+  }
+  &-6 {
+    font-size: var(--fs-6);
+  }
+  &-7 {
+    font-size: var(--fs-7);
+  }
+  &-8 {
+    font-size: var(--fs-8);
+  }
+  &-9 {
+    font-size: var(--fs-9);
+  }
+}
