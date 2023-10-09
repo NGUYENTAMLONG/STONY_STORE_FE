@@ -10,8 +10,15 @@ const fetchReviewProducts = (categoryId, page, limit) => {
 };
 
 const login = (payload) => {
-  console.log(payload);
   return instance.post("/auth/login", payload);
 };
 
-export { fetchAllProducts, fetchReviewProducts, login };
+const fetchProfile = (accessToken) => {
+  return instance.get(`/users/me`, {
+    headers: {
+      Authorization: `Bearer ${accessToken}`,
+    },
+  });
+};
+
+export { fetchAllProducts, fetchReviewProducts, login, fetchProfile };

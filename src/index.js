@@ -4,7 +4,11 @@ import "./styles/global.scss";
 import reportWebVitals from "./reportWebVitals";
 import App from "./views/App";
 import "@fortawesome/fontawesome-free/css/all.min.css";
-import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import {
+  BrowserRouter,
+  createBrowserRouter,
+  RouterProvider,
+} from "react-router-dom";
 import { UserProvider } from "./context/UserContext";
 import { Provider } from "react-redux";
 import store from "./redux/store";
@@ -15,7 +19,10 @@ root.render(
   <Provider store={store}>
     <React.StrictMode>
       <UserProvider>
-        <RouterProvider router={router} />
+        {/* <RouterProvider router={router} /> */}
+        <BrowserRouter>
+          <App />
+        </BrowserRouter>
       </UserProvider>
     </React.StrictMode>
   </Provider>

@@ -4,7 +4,9 @@ import apiConfig from "../apis/apiConfig";
 const instance = axios.create({
   baseURL: apiConfig.baseUrl,
   //   timeout: 1000,
-  //   headers: { "X-Custom-Header": "foobar" },
+  // headers: {
+  //   "X-Custom-Header": "foobar",
+  // },
 });
 
 instance.interceptors.response.use(

@@ -16,7 +16,7 @@ const headerStyle = {
   boxShadow: "rgba(0, 0, 0, 0.45) 0px 25px 20px -20px",
   zIndex: 100,
   position: "fixed",
-  width: "100%",
+  width: "100vw",
   top: 0,
   left: 0,
 };
@@ -24,11 +24,9 @@ const headerStyle = {
 export default function HeaderComponent() {
   return (
     <Header style={headerStyle}>
-      {/* <div className="container"> */}
       <HeaderLeft />
       <HeaderRight />
       <HeaderRightResponsive />
-      {/* </div> */}
     </Header>
   );
 }

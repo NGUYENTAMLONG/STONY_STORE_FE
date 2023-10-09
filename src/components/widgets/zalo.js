@@ -15,8 +15,7 @@ const ZaloChat = () => {
     };
     document.body.appendChild(zaloScript);
   }, []);
-
-  return <div id="zalo-chat-widget">sdfsdaf</div>;
+  return <div id="zalo-chat-widget"></div>;
 };
 
 export default ZaloChat;

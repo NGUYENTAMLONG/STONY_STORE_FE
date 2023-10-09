@@ -107,7 +107,10 @@ export default function Products() {
                   <div className="item__infor__color">
                     <div className="item__infor__color__box">
                       {_.uniqBy(item.variants, "colorId").map((variant) => (
-                        <div className="item__infor__color__box__item">
+                        <div
+                          className="item__infor__color__box__item"
+                          key={variant.color.id}
+                        >
                           <img src={apiConfig.baseUrl + variant.color.image} />
                         </div>
                       ))}

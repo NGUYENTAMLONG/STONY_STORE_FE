@@ -1,7 +1,6 @@
 import React from "react";
 import "./scss/footer.scss";
 import { Layout } from "antd";
-import { Col, Row } from "antd";
 import { AimOutlined } from "@ant-design/icons";
 import "bootstrap/dist/css/bootstrap.css";
 const { Footer } = Layout;
@@ -10,8 +9,8 @@ export default function FooterComponent() {
     <>
       <Footer className="footer">
         <div className="container">
-          <Row>
-            <Col span={6} className="px-3">
+          <div className="row">
+            <div className="col-md-3 col-sm-6 col-xs-12 px-3 py-4">
               <div className="footer__about">
                 <div className="footer__about__title d-flex align-items-center justify-content-start">
                   <div className="footer__about__title__icon d-flex align-items-center justify-content-start">
@@ -58,8 +57,8 @@ export default function FooterComponent() {
                   </div>
                 </div>
               </div>
-            </Col>
-            <Col span={6} className="px-3">
+            </div>
+            <div className="col-md-3 col-sm-6 col-xs-12 px-3 py-4">
               <div className="footer__support">
                 <div className="footer__support__title d-flex align-items-center justify-content-start">
                   <div className="footer__support__title__icon d-flex align-items-center justify-content-center">
@@ -91,8 +90,8 @@ export default function FooterComponent() {
                   </div>
                 </div>
               </div>
-            </Col>
-            <Col span={6} className="px-3">
+            </div>
+            <div className="col-md-3 col-sm-6 col-xs-12 px-3 py-4">
               <div className="footer__follow">
                 <div className="footer__follow__title d-flex align-items-center justify-content-start">
                   <div className="footer__follow__title__icon d-flex align-items-center justify-content-center">
@@ -131,8 +130,8 @@ export default function FooterComponent() {
                   </div>
                 </div>
               </div>
-            </Col>
-            <Col span={6} className="px-3">
+            </div>
+            <div className="col-md-3 col-sm-6 col-xs-12 px-3 py-4">
               <div className="footer__follow">
                 <div className="footer__follow__title d-flex align-items-center justify-content-start">
                   <div className="footer__follow__title__icon d-flex align-items-center justify-content-center">
@@ -173,8 +172,8 @@ export default function FooterComponent() {
                   </div>
                 </div>
               </div>
-            </Col>
-          </Row>
+            </div>
+          </div>
         </div>
       </Footer>
       <div className="footer__map">
@@ -182,9 +181,9 @@ export default function FooterComponent() {
           src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d4421.715893532514!2d106.27408643222606!3d21.263349681538!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31356e15b5aaaaab%3A0xd9ce6b1e95d3cc28!2zVEhQVCBZw6puIETFqW5nIHPhu5EgMg!5e0!3m2!1svi!2s!4v1695880139562!5m2!1svi!2s"
           width="100%"
           style={{ border: 0 }}
-          allowfullscreen=""
+          allowFullScreen=""
           loading="lazy"
-          referrerpolicy="no-referrer-when-downgrade"
+          referrerPolicy="no-referrer-when-downgrade"
         ></iframe>
       </div>
     </>
