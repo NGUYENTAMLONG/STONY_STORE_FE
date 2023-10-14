@@ -21,4 +21,24 @@ const fetchProfile = (accessToken) => {
   });
 };
 
-export { fetchAllProducts, fetchReviewProducts, login, fetchProfile };
+const handleForgotPassword = (email) => {
+  return instance.post("/auth/forgot-password", {
+    email,
+  });
+};
+
+const fetchRecoverPassword = (password, confirmPassword, jwt) => {
+  return instance.post("/auth/recover-password", {
+    newPassword: password,
+    verifyPassword: confirmPassword,
+    jwt,
+  });
+};
+export {
+  fetchAllProducts,
+  fetchReviewProducts,
+  login,
+  fetchProfile,
+  handleForgotPassword,
+  fetchRecoverPassword,
+};

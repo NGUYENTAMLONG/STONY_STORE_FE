@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { Button, Checkbox, Form, Input, Spin } from "antd";
 import { ToastContainer, toast } from "react-toastify";
 import "./scss/login.scss";
-import { useNavigate } from "react-router-dom";
+import { NavLink, useNavigate } from "react-router-dom";
 // import { login } from "../../services/user-service";
 import { useDispatch, useSelector } from "react-redux";
 import { handleLoginRedux } from "../../redux/actions/userAction";
@@ -145,7 +145,14 @@ export default function Login() {
             ) : (
               <Spin />
             )}
-            <Button htmlType="button">Quên mật khẩu</Button>
+            <Button htmlType="button">
+              <NavLink
+                to="/forgot-password"
+                className="nav-item text-decoration-none"
+              >
+                Quên mật khẩu
+              </NavLink>
+            </Button>
           </Form.Item>
         </Form>
       </div>

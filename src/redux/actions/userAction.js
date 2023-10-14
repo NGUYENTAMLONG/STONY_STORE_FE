@@ -1,5 +1,10 @@
 import { toast } from "react-toastify";
-import { fetchProfile, login } from "../../services/user-service";
+import {
+  fetchProfile,
+  fetchRecoverPassword,
+  handleForgotPassword,
+  login,
+} from "../../services/user-service";
 
 // export const USER_LOGIN = "USER_LOGIN";
 // export const USER_LOGOUT = "USER_LOGOUT";
@@ -15,6 +20,18 @@ export const USER_REFRESH = "USER_REFRESH";
 //Profile
 export const FETCH_USER_PROFILE = "FETCH_USER_PROFILE";
 export const FETCH_USER_PROFILE_SUCCESS = "FETCH_USER_PROFILE_SUCCESS";
+//Password
+export const FETCH_USER_FORGOT_PASSWORD = "FETCH_USER_FORGOT_PASSWORD";
+export const FETCH_USER_FORGOT_PASSWORD_SUCCESS =
+  "FETCH_USER_FORGOT_PASSWORD_SUCCESS";
+export const FETCH_USER_FORGOT_PASSWORD_FAILURE =
+  "FETCH_USER_FORGOT_PASSWORD_FAILURE";
+export const FETCH_USER_RECOVER_PASSWORD = "FETCH_USER_RECOVER_PASSWORD";
+export const FETCH_USER_RECOVER_PASSWORD_SUCCESS =
+  "FETCH_USER_RECOVER_PASSWORD_SUCCESS";
+export const FETCH_USER_RECOVER_PASSWORD_FAILURE =
+  "FETCH_USER_RECOVER_PASSWORD_FAILURE";
+
 const handleLoginRedux = (username, password) => {
   return async (dispatch, getState) => {
     dispatch({ type: FETCH_USER_LOGIN });
@@ -37,8 +54,11 @@ const handleLoginRedux = (username, password) => {
         // console.log(response);
       } else {
         //error
-        // console.log(response);
-        if (response && response.status === 400) {
+        console.log(response);
+        if (
+          (response && response.status === 400) ||
+          (response && response.status === 401)
+        ) {
           toast.error("Tài khoản hoặc mật khẩu không chính xác", {
             position: "top-center",
             autoClose: 5000,
@@ -107,9 +127,109 @@ const handleProfileRedux = (accessToken) => {
     }
   };
 };
+
+const handleForgotAccountRedux = (email) => {
+  return async (dispatch, getState) => {
+    dispatch({ type: FETCH_USER_FORGOT_PASSWORD });
+    try {
+      const result = await handleForgotPassword(email);
+      if (result && result.status === 200) {
+        dispatch({
+          type: FETCH_USER_FORGOT_PASSWORD_SUCCESS,
+          data: {
+            ...result,
+          },
+        });
+        toast.success("Đã gửi thư tới email của bạn !", {
+          position: "top-center",
+          autoClose: 5000,
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: true,
+          draggable: true,
+          progress: undefined,
+          theme: "light",
+        });
+      } else {
+        if (result && result.status === 400) {
+          let message =
+            result.response.code === "auth008"
+              ? "Email không tồn tại !"
+              : "Đã có lỗi !";
+          toast.error(message, {
+            position: "top-center",
+            autoClose: 5000,
+            hideProgressBar: false,
+            closeOnClick: true,
+            pauseOnHover: true,
+            draggable: true,
+            progress: undefined,
+            theme: "light",
+          });
+        }
+        dispatch({
+          type: FETCH_USER_FORGOT_PASSWORD_FAILURE,
+        });
+      }
+    } catch (error) {
+      console.log(error);
+    }
+  };
+};
+
+const handleRecoverAccountRedux = (password, confirmPassword, jwt) => {
+  return async (dispatch, getState) => {
+    dispatch({ type: FETCH_USER_RECOVER_PASSWORD });
+    try {
+      const response = await fetchRecoverPassword(
+        password,
+        confirmPassword,
+        jwt
+      );
+      if (response && response.status === 200) {
+        dispatch({
+          type: FETCH_USER_RECOVER_PASSWORD_SUCCESS,
+          data: {
+            ...response,
+          },
+        });
+        toast.success("Đã khôi phục thành công mật khẩu !", {
+          position: "top-center",
+          autoClose: 5000,
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: true,
+          draggable: true,
+          progress: undefined,
+          theme: "light",
+        });
+      } else {
+        if (response && response.status === 400) {
+          toast.error("Đã có lỗi !", {
+            position: "top-center",
+            autoClose: 5000,
+            hideProgressBar: false,
+            closeOnClick: true,
+            pauseOnHover: true,
+            draggable: true,
+            progress: undefined,
+            theme: "light",
+          });
+        }
+        dispatch({
+          type: FETCH_USER_RECOVER_PASSWORD_FAILURE,
+        });
+      }
+    } catch (error) {
+      console.log(error);
+    }
+  };
+};
 export {
   handleLoginRedux,
   handleLogoutRedux,
   handleRefreshRedux,
   handleProfileRedux,
+  handleForgotAccountRedux,
+  handleRecoverAccountRedux,
 };

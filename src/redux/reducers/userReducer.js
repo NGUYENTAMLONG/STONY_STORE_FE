@@ -7,6 +7,12 @@ import {
   USER_LOGOUT,
   USER_REFRESH,
   FETCH_USER_PROFILE_SUCCESS,
+  FETCH_USER_FORGOT_PASSWORD,
+  FETCH_USER_FORGOT_PASSWORD_SUCCESS,
+  FETCH_USER_FORGOT_PASSWORD_FAILURE,
+  FETCH_USER_RECOVER_PASSWORD,
+  FETCH_USER_RECOVER_PASSWORD_SUCCESS,
+  FETCH_USER_RECOVER_PASSWORD_FAILURE,
 } from "../actions/userAction";
 const INITIAL_STATE = {
   isLoading: false,
@@ -18,6 +24,7 @@ const INITIAL_STATE = {
     auth: null,
   },
   profile: {},
+  forgotPassword: {},
 };
 
 const userReducer = (state = INITIAL_STATE, action) => {
@@ -101,6 +108,54 @@ const userReducer = (state = INITIAL_STATE, action) => {
         },
         isLoading: false,
         isError: false,
+      };
+    case FETCH_USER_FORGOT_PASSWORD:
+      return {
+        ...state,
+        isLoading: true,
+        isError: false,
+      };
+    case FETCH_USER_FORGOT_PASSWORD_SUCCESS:
+      return {
+        ...state,
+        forgotPassword: {
+          result: true,
+        },
+        isLoading: false,
+        isError: false,
+      };
+    case FETCH_USER_FORGOT_PASSWORD_FAILURE:
+      return {
+        ...state,
+        forgotPassword: {
+          result: false,
+        },
+        isLoading: false,
+        isError: true,
+      };
+    case FETCH_USER_RECOVER_PASSWORD:
+      return {
+        ...state,
+        isLoading: true,
+        isError: false,
+      };
+    case FETCH_USER_RECOVER_PASSWORD_SUCCESS:
+      return {
+        ...state,
+        recoverPassword: {
+          result: true,
+        },
+        isLoading: false,
+        isError: false,
+      };
+    case FETCH_USER_RECOVER_PASSWORD_FAILURE:
+      return {
+        ...state,
+        recoverPassword: {
+          result: false,
+        },
+        isLoading: false,
+        isError: true,
       };
     default:
       return state;

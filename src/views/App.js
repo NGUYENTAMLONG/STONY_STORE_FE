@@ -1,4 +1,4 @@
-import React, { useContext, useEffect, useState } from "react";
+import React, { useContext } from "react";
 import {
   BrowserRouter as Router,
   Route,
@@ -22,6 +22,13 @@ import Login from "../components/login";
 import { handleRefreshRedux } from "../redux/actions/userAction";
 import Profile from "./pages/profile/profile";
 import Contact from "./pages/contact/contact";
+import ForgotPassword from "./pages/forgot-password/forgot-password";
+import RecoverPassword from "./pages/recover-password/recover-password";
+import Dashboard from "./admin/product/product";
+import Main from "./admin/main/main";
+import ProductManagement from "./admin/product/product";
+import UserManagement from "./admin/user/user";
+import Notfound from "./pages/404/notfound";
 function App() {
   const account = useSelector((state) => state.user.account);
   const dispatch = useDispatch();
@@ -32,24 +39,39 @@ function App() {
   // Kiểm tra nếu tuyến đường là "/login"
   const location = useLocation();
   // Kiểm tra nếu tuyến đường là "/login"
-  const isLoginPage = location.pathname === "/login";
+  const routesWithoutHeaderAndFooter = [
+    "/login",
+    "/forgot-password",
+    "/recover-password",
+    "/admin/main",
+    "/admin/dashboard/user",
+    "/admin/dashboard/product",
+    "/admin/auth/login",
+  ];
+  const checkAppear = routesWithoutHeaderAndFooter.includes(location.pathname);
 
-  // useEffect(() => {
-  //   if (localStorage.getItem("access_token")) {
-  //     dispatch(handleRefreshRedux());
-  //   }
-  // }, []);
   return (
     <div className="App">
-      {!isLoginPage && <HeaderComponent />}
+      {!checkAppear ? <HeaderComponent /> : null}
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/about" element={<About />} />
         <Route path="/profile" element={<Profile />} />
         <Route path="/contact" element={<Contact />} />
         <Route path="/login" element={<Login />} />
-      </Routes>{" "}
-      {!isLoginPage && <FooterComponent />}
+        <Route path="/forgot-password" element={<ForgotPassword />} />
+        <Route path="/recover-password" element={<RecoverPassword />} />
+        <Route path="/admin" element={<Main />}>
+          <Route path="dashboard/user" element={<UserManagement />} />
+          <Route path="dashboard/product" element={<ProductManagement />} />
+          {/* <Route path="auth" element={<Dashboard />}>
+            <Route path="/login" element={<Login />} />
+          </Route> */}
+        </Route>
+        <Route path="*" element={<Notfound />} />
+      </Routes>
+      {!checkAppear ? <FooterComponent /> : null}
+
       {/* <ZaloChat />
       <FacebookChat /> */}
     </div>
